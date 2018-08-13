@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PhoneNumber, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
-  let(:phone_number) { PhoneNumber.new(number: '939127475') }
+  let(:phone_number) { PhoneNumber.new(number: '939127475', person_id: 1) }
 
   it 'is valid' do
     expect(phone_number).to be_valid
