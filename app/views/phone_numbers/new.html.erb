@@ -2,4 +2,8 @@
 
 <%= render 'form', phone_number: @phone_number %>
 
-<%= link_to 'Back', phone_numbers_path %>
+<% if @phone_number.person %>
+  <%= link_to 'Back', person_path(@phone_number.person) %>
+<% else %>
+  <%= link_to 'Back', phone_numbers_path %>
+<% end %>
