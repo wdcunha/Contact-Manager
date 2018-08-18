@@ -28,6 +28,6 @@ RSpec.describe Person, type: :model do
   end
 
   it 'has an array of emails' do
-    expect(person.emails).to eq([])
+    expect(person.email_addresses).to eq([])
   end
 end

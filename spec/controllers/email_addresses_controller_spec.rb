@@ -28,12 +28,13 @@ RSpec.describe EmailAddressesController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # EmailAddress. As you add validations to EmailAddress, be sure to
   # adjust the attributes here as well.
+  let(:bob) { Person.create(first_name: 'Bob', last_name: 'Jones') }
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { address: 'admin@example.com', person_id: bob.id }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { address: nil, person_id: nil }
   }
 
   # This should return the minimal set of values that should be in the session

@@ -2,9 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "email_addresses/edit", type: :view do
   before(:each) do
+    @person = assign(:person, Person.create!(
+      :first_name => "MyString",
+      :last_name => "MyString"
+    ))
     @email_address = assign(:email_address, EmailAddress.create!(
       :address => "MyString",
-      :person_id => 1
+      :person_id => @person.id
     ))
   end
 
