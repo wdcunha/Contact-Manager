@@ -2,4 +2,9 @@
 
 <%= render 'form', email_address: @email_address %>
 
-<%= link_to 'Back', email_addresses_path %>
+
+<% if @email_address.person %>
+  <%= link_to 'Back', person_path(@email_address.person) %>
+<% else %>
+  <%= link_to 'Back', email_addresses_path %>
+<% end %>

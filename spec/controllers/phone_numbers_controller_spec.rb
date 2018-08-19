@@ -50,7 +50,7 @@ RSpec.describe PhoneNumbersController, type: :controller do
   describe "GET #index" do
     it "returns a success response" do
       phone_number = PhoneNumber.create! valid_attributes
-      get :index, params: {id: phone_number.id.to_param}, session: valid_session
+      get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
   end
