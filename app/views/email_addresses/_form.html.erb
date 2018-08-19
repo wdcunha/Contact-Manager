@@ -17,11 +17,15 @@
   </div>
 
   <div class="field">
-    <%= form.label :person_id %>
-    <%= form.number_field :person_id %>
+    <% if @email_address.person %>
+      <%= form.hidden_field :person_id %>
+    <% else %>
+      <%= form.label :person_id %>
+      <%= form.number_field :person_id %>
+    <% end %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Create Email Address'%>
   </div>
 <% end %>
