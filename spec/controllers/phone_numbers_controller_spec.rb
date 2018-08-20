@@ -35,8 +35,6 @@ RSpec.describe PhoneNumbersController, type: :controller do
   let(:bob) { Person.create(first_name: 'Bob', last_name: 'Jones') }
   let(:valid_attributes) { {number: '555-5678', person_id: bob.id} }
   let(:new_attributes) { {number: 'MyNewString', person_id: bob.id} }
-
-
   let(:invalid_attributes) {
     # skip("Add a hash of attributes invalid for your model")
     { number: nil, person_id: nil }
@@ -137,14 +135,11 @@ RSpec.describe PhoneNumbersController, type: :controller do
         phone_number = PhoneNumber.create! valid_attributes
         put :update, params: {:id => phone_number.to_param, :phone_number => valid_attributes}, session: valid_session
         expect(response).to redirect_to(bob)
-
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
-        bob = Person.create(first_name: 'Bob', last_name: 'Jones')
-        valid_attributes = {number: '555-5678', person_id: bob.id}
         phone_number = PhoneNumber.create! valid_attributes
         put :update, params: {id: phone_number.to_param, phone_number: invalid_attributes}, session: valid_session
         expect(response).to be_success
