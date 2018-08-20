@@ -2,16 +2,16 @@ require 'rails_helper'
 
 RSpec.describe "phone_numbers/index", type: :view do
   before(:each) do
-    # assign(:bob, [
-    #   Person.create!(
-    #     :first_name => "Bob",
-    #     :last_name => "Jones"
-    #   )
-    # ])
-    bob = Person.create!(
-      :first_name => "Bob",
-      :last_name => "Jones"
-    ),
+    assign(:bob, [
+      Person.create!(
+        :first_name => "Bob",
+        :last_name => "Jones"
+      )
+    ])
+    # bob = Person.create!(
+    #   :first_name => "Bob",
+    #   :last_name => "Jones"
+    # ),
     assign(:phone_numbers, [
       PhoneNumber.create!(
         :number => "Number",
