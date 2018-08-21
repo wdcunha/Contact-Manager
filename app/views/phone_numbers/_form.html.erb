@@ -17,11 +17,11 @@
   </div>
 
   <div class="field">
-    <% if @phone_number.person %>
-      <%= form.hidden_field :person_id %>
+    <% if @phone_number.contact %>
+      <%= form.hidden_field :contact_id %>
     <% else %>
-      <%= form.label :person_id %>
-      <%= form.number_field :person_id %>
+      <%= form.label :contact_id %>
+      <%= form.number_field :contact_id %>
     <% end %>
   </div>
 
@@ -29,6 +29,16 @@
     <%#= form.label :person_id %>
     <%#= form.hidden_field :person_id %>
   </div> -->
+
+  <div class="field">
+    <% if @phone_number.contact %>
+      <%= form.hidden_field :contact_type %>
+    <% else %>
+      <%= form.label :contact_type %>
+      <%= form.text_field :contact_type %>
+    <% end %>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>
