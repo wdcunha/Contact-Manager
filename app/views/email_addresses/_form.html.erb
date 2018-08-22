@@ -17,11 +17,20 @@
   </div>
 
   <div class="field">
-    <% if @email_address.person %>
-      <%= form.hidden_field :person_id %>
+    <% if @email_address.contact %>
+      <%= form.hidden_field :contact_id %>
     <% else %>
-      <%= form.label :person_id %>
-      <%= form.number_field :person_id %>
+      <%= form.label :contact_id %>
+      <%= form.number_field :contact_id %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <% if @email_address.contact %>
+      <%= form.hidden_field :contact_type %>
+    <% else %>
+      <%= form.label :contact_type %>
+      <%= form.text_field :contact_type %>
     <% end %>
   </div>
 

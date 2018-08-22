@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Company, type: :model do
+
   let(:company) do
-    Company.create(name: 'GodingWell')
+    Company.create(name: 'GodInWell')
   end
 
   let(:invalid_attributes) { { name: nil } }
@@ -25,5 +26,8 @@ RSpec.describe Company, type: :model do
     expect(phone_number.number).to eq('333-4444')
   end
 
-
+  it "responds with its created email addresses" do
+    company.email_addresses.build(address: 'a@example.com')
+    expect(company.email_addresses.map(&:address)).to eq(['a@example.com'])
+  end
 end

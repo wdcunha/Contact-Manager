@@ -4,7 +4,7 @@ RSpec.describe PhoneNumber, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
   let(:person) { Person.create(first_name: 'Bob', last_name: 'Jones') }
   let(:phone_number) do
-     PhoneNumber.new(number: '939127475', contact_type: 'Person', contact_id: person.id)
+     PhoneNumber.new(number: '939127475', contact_id: person.id, contact_type: 'Person')
   end
 
   it 'is valid' do
@@ -22,7 +22,7 @@ RSpec.describe PhoneNumber, type: :model do
   end
 
   it 'is associated with a contact' do
-    # Solution: belongs_to :person put in the model
+    # Solution: belongs_to :contact put in the model
     expect(phone_number).to respond_to(:contact)
   end
 end

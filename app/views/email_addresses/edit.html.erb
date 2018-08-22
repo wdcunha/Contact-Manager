@@ -5,8 +5,8 @@
 
 <%= link_to 'Show', @email_address %> |
 
-<% if @email_address.person %>
-  <%= link_to 'Back', person_path(@email_address.person) %>
+<% if @email_address.contact_type == "Company" %>
+  <%= link_to 'Back', person_path(@email_address.contact) %>
 <% else %>
   <%= link_to 'Back', email_addresses_path %>
 <% end %>
