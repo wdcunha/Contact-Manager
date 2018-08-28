@@ -17,13 +17,17 @@ RSpec.describe Company, type: :model do
     expect(company).not_to be_valid
   end
 
-  it "has an array of companies" do
-    expect(company.names).to eq([])
+  it "has an array of phone_numbers" do
+    expect(company.phone_numbers).to eq([])
   end
 
   it "responds with its phone numbers after they're created" do
     phone_number = company.phone_numbers.build(number: "333-4444")
     expect(phone_number.number).to eq('333-4444')
+  end
+
+  it 'has an array of emails' do
+    expect(company.email_addresses).to eq([])
   end
 
   it "responds with its created email addresses" do

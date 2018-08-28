@@ -69,7 +69,7 @@ describe 'the company view', type: :feature do
     end
 
     it "has an add email address link" do
-      expect(page).to have_link('Add email address', href: new_email_address_path(contact_id: company.id))
+      expect(page).to have_link('Add email address', href: new_email_address_path(contact_id: company.id, contact_type: 'Company'))
     end
 
     it "adds a new email address" do

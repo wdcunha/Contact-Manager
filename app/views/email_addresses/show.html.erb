@@ -6,9 +6,10 @@
 </p>
 
 <p>
-  <strong>Person:</strong>
+  <strong>Contact:</strong>
   <%= @email_address.contact_id %>
 </p>
 
 <%= link_to 'Edit', edit_email_address_path(@email_address) %> |
+<%= link_to('Delete', email_addresses_path(@email_address), :method => "delete") %> |
 <%= link_to 'Back', email_addresses_path %>

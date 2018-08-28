@@ -3,15 +3,17 @@ require 'rails_helper'
 RSpec.describe "email_addresses/index", type: :view do
   let(:bob) { Person.create(first_name: 'Bob', last_name: 'Jones') }
   before(:each) do
-    assign(:bob, bob)
+    # assign(:bob, bob)
     assign(:email_addresses, [
       EmailAddress.create!(
         :address => "Address",
-        :contact_id => bob.id
+        :contact_id => bob.id,
+        :contact_type => 'Person'
       ),
       EmailAddress.create!(
         :address => "Address",
-        :contact_id => bob.id
+        :contact_id => bob.id,
+        :contact_type => 'Person'
       )
     ])
   end
