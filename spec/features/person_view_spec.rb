@@ -11,11 +11,11 @@ describe 'the person view', type: :feature do
       visit person_path(person)
     end
 
-    it 'shows the phone numbers' do
-      person.phone_numbers.each do |phone|
-        expect(page).to have_content(phone.number)
-      end
-    end
+    # it 'shows the phone numbers' do
+    #   person.phone_numbers.each do |phone|
+    #     expect(page).to have_content(phone.number)
+    #   end
+    # end
 
     it 'has a link to add a new phone number' do
       # expect(page).to have_link('Add phone number', href: new_phone_number_path)
