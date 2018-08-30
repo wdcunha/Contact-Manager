@@ -1,14 +1,10 @@
 class EmailAddressesController < ApplicationController
-  before_action :set_email_address, only: [:show, :edit, :update, :destroy]
+  before_action :set_email_address, only: [:edit, :update, :destroy]
 
   # GET /email_addresses/new
   def new
     # @email_address = EmailAddress.new
     @email_address = EmailAddress.new(contact_id: params[:contact_id], contact_type: params[:contact_type])
-  end
-
-  # GET /email_addresses/1/edit
-  def edit
   end
 
   # POST /email_addresses
