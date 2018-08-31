@@ -17,6 +17,9 @@ RSpec.describe Company, type: :model do
     expect(company).not_to be_valid
   end
 
+  it "convert to a string with Name" do
+    expect(company.to_s).to eq "GodInWell"
+  end
   it "has an array of phone_numbers" do
     expect(company.phone_numbers).to eq([])
   end

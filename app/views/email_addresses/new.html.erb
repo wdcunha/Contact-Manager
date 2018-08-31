@@ -1,12 +1,12 @@
-<h1>New Email Address</h1>
+<h1><%= "New Email Address for #{@email_address.contact}" %></h1>
 
 <%= render 'form', email_address: @email_address %>
 
 
 <% if @email_address.contact_type == "Company" %>
-  <%= link_to 'Back', company_path(@email_address.contact) %>
+  <%= link_to "Back #{@email_address.contact}", company_path(@email_address.contact) %> |
+  <%= link_to 'Companies List', companies_path %>
 <% elsif @email_address.contact_type == "Person" %>
-  <%= link_to 'Back', person_path(@email_address.contact) %>
-<% else %>
-  <%= link_to 'Back', email_addresses_path %>
+  <%= link_to "Back #{@email_address.contact}", person_path(@email_address.contact) %> |
+  <%= link_to 'People List', people_path %>
 <% end %>

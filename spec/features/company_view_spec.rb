@@ -32,7 +32,7 @@ describe 'the company view', type: :feature do
 
     it 'has links to edit phone numbers' do
       company.phone_numbers.each do |phone|
-        expect(page).to have_link('edit', href: edit_phone_number_path(phone))
+        expect(page).to have_link("Edit #{@company.name}", href: edit_company_path(phone))
       end
     end
 

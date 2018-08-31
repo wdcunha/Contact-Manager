@@ -23,6 +23,10 @@ RSpec.describe Person, type: :model do
     expect(person).not_to be_valid
   end
 
+  it "convert to a string with last name, first name" do
+    expect(person.to_s).to eq "Smith, Alice"
+  end
+  
   # it 'has an array of phone numbers' do
   it 'responds with its created phone numbers' do
     # expect(person.phone_numbers).to eq([])
